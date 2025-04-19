@@ -1,14 +1,16 @@
 const removeFromArray = function(array, ...num) 
     {
+        //create a copy of the array to work with
+        const result = [...array];
         for ( const number of num) 
               {
-                const index = array.indexOf(number);
-                if (index > -1) 
+                let index;
+                while ((index = result.indexOf(number)) !== -1) 
                   { //only spliuce array when item is found
-                     array.splice(index,1); //2nd parameter means remove one item only
+                     result.splice(index, 1); //2nd parameter means remove one item only
                   }
               }
-        return array;
+        return result;
     };
 
 // Do not edit below this line
